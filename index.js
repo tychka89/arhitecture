@@ -1,24 +1,32 @@
 const app = () => {
-  let counterValue = 0;
+  const state = {
+    registrationForm: {
+      valid: null,
+      errors: [],
+    }
+  };
 
-  const result = document.getElementById('result');
+  const input = document.querySelector('.phone');
+  const submit = document.querySelector('.submit');
 
-  const incHandler = () => {
-    counterValue += 1;
-    result.textContent = counterValue;
-  }
+  input.addEventListener('input', (e) => {
+    const inputValue = e.target.value;
+    state.registrationForm.value = inputValue;
+    if (inputValue.match(/^\d+$/)) {
+      state.registrationForm.valid = true;
+      state.registrationForm.errors = [];
+    } else {
+      state.registrationForm.valid = false;
+      state.registrationForm.errors.push('wrong format');
+    }
 
-  const decHandler = () => {
-    counterValue -= 1;
-    result.textContent = counterValue;
-  }
-
-  const inc = document.getElementById('increment');
-  inc.addEventListener('click', incHandler);
-
-  const dec = document.getElementById('decrement');
-  dec.addEventListener('click', decHandler);
-  
+    submit.disabled = !state.registrationForm.valid;
+    if (state.registrationForm.valid) {
+      input.style.border = null;
+    } else {
+      input.style.border = 'thick solid red';
+    }
+  });
 };
 
 app();
