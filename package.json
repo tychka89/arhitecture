@@ -1,0 +1,24 @@
+{
+  "type": "module",
+  "scripts": {
+    "test": "jest --colors"
+  },
+  "jest": {
+    "testEnvironment": "jsdom"
+  },
+  "dependencies": {
+    "lodash": "*",
+    "axios": "*",
+    "core-js": "*",
+    "regenerator-runtime": "*"
+  },
+  "devDependencies": {
+    "prettier": "*",
+    "@pollyjs/core": "*",
+    "@pollyjs/adapter-node-http": "*",
+    "@testing-library/user-event": "*",
+    "@testing-library/dom": "*",
+    "@testing-library/jest-dom": "*",
+    "@jest/globals": "*"
+  }
+}
