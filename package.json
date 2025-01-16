@@ -7,18 +7,18 @@
     "testEnvironment": "jsdom"
   },
   "dependencies": {
-    "lodash": "*",
     "axios": "*",
-    "core-js": "*",
-    "regenerator-runtime": "*"
+    "core-js": "^3.40.0",
+    "lodash": "*",
+    "regenerator-runtime": "^0.14.1"
   },
   "devDependencies": {
-    "prettier": "*",
-    "@pollyjs/core": "*",
+    "@jest/globals": "*",
     "@pollyjs/adapter-node-http": "*",
-    "@testing-library/user-event": "*",
+    "@pollyjs/core": "*",
     "@testing-library/dom": "*",
     "@testing-library/jest-dom": "*",
-    "@jest/globals": "*"
+    "@testing-library/user-event": "*",
+    "prettier": "*"
   }
 }
